@@ -12,7 +12,8 @@ router = Router()
 
 @router.message(Command('start'))
 async def start_command(message: types.Message):
-    await message.answer("This is a testing bot, gladly working\nMade by @Pekka_One", reply_markup=kb.main)
+    await message.answer("This is a testing bot, gladly working\nMade by @Pekka_One", 
+                         reply_markup=kb.main)
 
 @router.message(F.text.lower() == "bitch")
 async def bad_word(message: Message):
@@ -22,9 +23,14 @@ async def bad_word(message: Message):
     await bot.send_message(chat_id=def_username, text=f"You shoud beat {user_id} ass))")
     await message.answer("You are gonna regret")
 
-@router.message(F.text("about bot"))
+@router.message(F.text, Command('AboutBot'))
 async def about_us(message: types.Message):
-    await message.answer("BOT i created by pekkaone on github\nthat is a preview project created by 14 yo. kiddo ;)")
+    await message.answer("BOT i created by pekkaone on github\nthat is a preview project created by 14 yo. kiddo ;)",
+                         reply_markup=kb.main)
+    
+@router.message(F.text == 'github')
+async def my_github(message: Message):
+    await message.answer("This is my github)", reply_markup=kb.settings)
 
 @router.message(Command('myinfo'))
 async def user_id(message: Message):
@@ -32,7 +38,8 @@ async def user_id(message: Message):
     my_else = message.from_user.username
     my_else2 = message.from_user.is_premium
     my_else3 = message.from_user.full_name
-    await message.reply(f"your id is {my_id}\nUsername is @{my_else}\nis Premium: {my_else2}\nFull name: {my_else3}")
+    await message.reply(f"your id is {my_id}\nUsername is @{my_else}\nis Premium: {my_else2}\nFull name: {my_else3}",
+                        reply_markup=kb.main)
 
 
 @router.message()
