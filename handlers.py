@@ -22,6 +22,10 @@ async def bad_word(message: Message):
     await bot.send_message(chat_id=def_username, text=f"You shoud beat {user_id} ass))")
     await message.answer("You are gonna regret")
 
+@router.message(F.text("about us"))
+async def about_us(message: types.Message):
+    await message.answer("BOT i created by pekkaone on github\nthat is a preview project created by 14 yo. kiddo ;)")
+
 @router.message(Command('myinfo'))
 async def user_id(message: Message):
     my_id = message.from_user.id
