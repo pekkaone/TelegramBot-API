@@ -14,7 +14,6 @@ from handlers import router
 logging.basicConfig(level=logging.INFO)
 bot = Bot(token=config.bot_token.get_secret_value(), 
           default=DefaultBotProperties(parse_mode=ParseMode.HTML),
-          parse_mode=ParseMode.HTML
           )
 dp = Dispatcher()
 
