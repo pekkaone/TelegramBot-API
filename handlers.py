@@ -31,7 +31,7 @@ async def reg_two(message: Message, state: FSMContext):
 
 @router.message(Reg.name)
 async def two_three(message: Message, state: FSMContext):
-    await state.update_data(yo=int(message.text))
+    await state.update_data(yo=message.text)
     data = await state.get_data()
     await message.answer("your profile is ready:")
     await message.answer(f'Name: {data['name']}\nYo: {data["yo"]}')
