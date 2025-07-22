@@ -29,7 +29,7 @@ async def reg_two(message: Message, state: FSMContext):
     await state.set_state(Reg.yo)
     await message.answer("Enter your years old")
 
-@router.message(Reg.name)
+@router.message(Reg.yo)
 async def two_three(message: Message, state: FSMContext):
     await state.update_data(yo=message.text)
     data = await state.get_data()
