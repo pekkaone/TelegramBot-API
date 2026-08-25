@@ -71,7 +71,7 @@ async def user_id(message: Message):
 
 @router.message(F.text, Command('Sonya'))
 async def my_bitches(message: Message):
-    await message.answer('I love sonya very much', reply_markup=await kb.inline_bitches())
+    await message.answer('I love sonya very much')
 
 '''
 @router.callback_query(F.data.startswith("bitch"))
