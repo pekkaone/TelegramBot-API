@@ -69,15 +69,17 @@ async def user_id(message: Message):
     await message.reply(f"your id is {my_id}\nUsername is @{my_else}\nis Premium: {my_else2}\nFull name: {my_else3}",
                         reply_markup=kb.main)
 
-@router.message(F.text, Command('bitches'))
+@router.message(F.text, Command('i love'))
 async def my_bitches(message: Message):
-    await message.answer('Here are my bitches:', reply_markup=await kb.inline_bitches())
+    await message.answer('I love sonya very much', reply_markup=await kb.inline_bitches())
 
+'''
 @router.callback_query(F.data.startswith("bitch"))
 async def handle_my_bitches(callback: CallbackQuery):
     index = int(callback.data.replace('bitch', ''))
     await callback.message.answer(f"{kb.bitches[index]} is rated at number {index + 1} by me")
     await callback.answer()
+'''
 
 @router.message()
 async def not_recognised(message: Message):
