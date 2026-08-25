@@ -14,8 +14,10 @@ settings = InlineKeyboardMarkup(inline_keyboard=[
 
 bitches = ['Monika', 'Snizana', 'Twiy tato']
 
+'''
 async def inline_bitches():
     keyboard = InlineKeyboardBuilder()
     for i, bitch in enumerate(bitches):
         keyboard.add(InlineKeyboardButton(text=bitch, callback_data=f'bitch{i}'))
     return keyboard.adjust(2).as_markup()
+'''
