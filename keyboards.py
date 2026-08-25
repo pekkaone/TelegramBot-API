@@ -3,7 +3,7 @@ from aiogram.utils.keyboard import ReplyKeyboardBuilder, InlineKeyboardBuilder
 
 main = ReplyKeyboardMarkup(keyboard=[
     [KeyboardButton(text="/myinfo"), KeyboardButton(text="/github")],
-    [KeyboardButton(text="/AboutBot"), KeyboardButton(text="/bitches")]
+    [KeyboardButton(text="/AboutBot"), KeyboardButton(text="/Sonya")]
 ],  
                             resize_keyboard=True,
                             input_field_placeholder="Choose the command")
