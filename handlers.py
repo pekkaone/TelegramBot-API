@@ -69,7 +69,7 @@ async def user_id(message: Message):
     await message.reply(f"your id is {my_id}\nUsername is @{my_else}\nis Premium: {my_else2}\nFull name: {my_else3}",
                         reply_markup=kb.main)
 
-@router.message(F.text, Command('i love'))
+@router.message(F.text, Command('sonya'))
 async def my_bitches(message: Message):
     await message.answer('I love sonya very much', reply_markup=await kb.inline_bitches())
 
